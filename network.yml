@@ -1,4 +1,6 @@
 AWSTemplateFormatVersion: 2010-09-09
+Description: >
+  Anas Hassan / CD using CircleCi pipeline, AWS CloudFormation and Ansible
 Parameters:
   EnvironmentName:
     Description: An environment name that will be prefixed to resource names

@@ -8,7 +8,10 @@ jobs:
       - checkout
       - run:
           name: "Create Infra"
-          command: "bash createInfra.sh createInfra infra.yml infra.json"
+          command: |
+            bash createInfra.sh createNetwork network.yml network.json
+            aws cloudformation wait stack-create-complete --stack-name createNetwork 
+            bash createInfra.sh createServers servers.yml servers.json
 
 workflows:
   CD:
